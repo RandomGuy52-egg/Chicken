@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ultimate Chicken Zone</title>
+  <style>
+    body {
+      background: #fffbe6;
+      font-family: "Comic Sans MS", cursive, sans-serif;
+      text-align: center;
+      padding: 2rem;
+    }
+    h1 {
+      font-size: 3rem;
+      color: #ff6f00;
+    }
+    .spin-chicken {
+      width: 200px;
+      animation: spin 4s linear infinite;
+      margin: 2rem auto;
+      cursor: pointer;
+    }
+    @keyframes spin {
+      from { transform: rotate(0deg); }
+      to { transform: rotate(360deg); }
+    }
+    .chicken-gallery {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 1rem;
+      margin-bottom: 3rem;
+    }
+    .chicken-gallery img {
+      width: 150px;
+      border-radius: 50%;
+      box-shadow: 0 0 10px rgba(0,0,0,0.3);
+      transition: transform 0.3s ease;
+      cursor: pointer;
+    }
+    .chicken-gallery img:hover {
+      transform: scale(1.1) rotate(10deg);
+    }
+    .dancing-chickens {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 2rem;
+      animation: dance 1s infinite alternate;
+    }
+    .dancing-chickens img {
+      width: 100px;
+      animation: dance 0.5s infinite alternate;
+    }
+    @keyframes dance {
+      0% { transform: translateY(0px) rotate(-5deg); }
+      100% { transform: translateY(-20px) rotate(5deg); }
+    }
+  </style>
+</head>
+<body>
+  <h1>🐔 Welcome to Chicken Zone 🐔</h1>
+  <img src="https://upload.wikimedia.org/wikipedia/commons/7/70/Chicken_sandwich.png" alt="Spinning Chicken" class="spin-chicken" onclick="playCluck()" />
+  <h2>More Chickens Below!</h2>
+  <div class="chicken-gallery">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/5/53/Fried-Chicken-Set.jpg" alt="Chicken 1" onclick="playCluck()" />
+    <img src="https://upload.wikimedia.org/wikipedia/commons/3/39/Fried_chicken_-_Arnold_Gatilao.jpg" alt="Chicken 2" onclick="playCluck()" />
+    <img src="https://upload.wikimedia.org/wikipedia/commons/1/15/Chicken_adobo.jpg" alt="Chicken 3" onclick="playCluck()" />
+    <img src="https://upload.wikimedia.org/wikipedia/commons/3/35/Chicken_schnitzel.jpg" alt="Chicken 4" onclick="playCluck()" />
+    <img src="https://upload.wikimedia.org/wikipedia/commons/b/b0/Roast_chicken.jpg" alt="Chicken 5" onclick="playCluck()" />
+  </div>
+
+  <h2>Now presenting... the Dancing Chickens! 💃🐔🕺</h2>
+  <div class="dancing-chickens">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/2/21/Chicken_icon.png" alt="Dancing Chicken 1" onclick="playCluck()" />
+    <img src="https://upload.wikimedia.org/wikipedia/commons/2/21/Chicken_icon.png" alt="Dancing Chicken 2" onclick="playCluck()" />
+    <img src="https://upload.wikimedia.org/wikipedia/commons/2/21/Chicken_icon.png" alt="Dancing Chicken 3" onclick="playCluck()" />
+    <img src="https://upload.wikimedia.org/wikipedia/commons/2/21/Chicken_icon.png" alt="Dancing Chicken 4" onclick="playCluck()" />
+    <img src="https://upload.wikimedia.org/wikipedia/commons/2/21/Chicken_icon.png" alt="Dancing Chicken 5" onclick="playCluck()" />
+  </div>
+
+  <audio id="cluckSound">
+    <source src="https://www.soundjay.com/animal/chicken-cluck-01.mp3" type="audio/mpeg">
+  </audio>
+
+  <script>
+    function playCluck() {
+      const audio = document.getElementById('cluckSound');
+      audio.currentTime = 0;
+      audio.play();
+    }
+  </script>
+</body>
+</html>
