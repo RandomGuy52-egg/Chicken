@@ -7,7 +7,7 @@
   <style>
     body {
       background: #111;
-      color: #f00;
+      color: purple;
       font-family: 'Courier New', Courier, monospace;
       display: flex;
       justify-content: center;
@@ -16,17 +16,30 @@
       margin: 0;
       text-align: center;
       user-select: none;
-      cursor: default;
+      cursor: pointer;
     }
     h1 {
       font-size: 5rem;
       text-transform: uppercase;
       letter-spacing: 0.5rem;
-      text-shadow: 0 0 10px #f00;
+      text-shadow: 0 0 10px purple;
+      margin: 0;
     }
   </style>
 </head>
 <body>
-  <h1>Fuck Off, Cunt.</h1>
+  <h1 id="message">Fuck Off, Cunt.</h1>
+
+  <audio id="elevenSound" src="ElevenLabs.mp3"></audio>
+
+  <script>
+    const message = document.getElementById('message');
+    const sound = document.getElementById('elevenSound');
+
+    message.addEventListener('click', () => {
+      sound.currentTime = 0;
+      sound.play();
+    });
+  </script>
 </body>
 </html>
